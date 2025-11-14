@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: qa-app
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /healthz
+    envVars:
+      - key: ENV
+        value: prod
+      - key: MESSAGES_API_URL
+        value: https://november7-730026606190.europe-west1.run.app/messages
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend.example
